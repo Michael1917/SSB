@@ -52,24 +52,42 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
+```
+Am=4.9;
+Ac=9.6;
+fm=370;
+fc=3700;
+fs=37000;
+t=0:1/fs:2/fm;
+m1=Am*cos(2*3.14*fm*t);
+c1=Ac*cos(2*3.14*fc*t);
+m2=Am*cos(1.57-(2*3.14*fm*t));
+c2=Ac*cos(1.57-(2*3.14*fc*t));
+s1=c1.*m1;
+s2=c2.*m2;
+lsb=(s1+s2);
+usb=(s1-s2);
+subplot(4,1,1);
+plot(t,m1);
+subplot(4,1,2);
+plot(t,c1);
+subplot(4,1,3);
+plot(t,lsb);
+subplot(4,1,4);
+plot(t,usb);
+```
 
 OUTPUT WAVEFORM
+<img width="1919" height="1199" alt="Screenshot 2025-10-21 203736" src="https://github.com/user-attachments/assets/3dc68779-92f9-4bc9-8991-75bf5698311d" />
+
 
 TABULATION
-
-
-
-
-
-
-
+<img width="1536" height="1440" alt="image" src="https://github.com/user-attachments/assets/8dd6a740-6542-45a7-8dc2-c038c8070687" />
 
 
 RESULT:
 
 Thus, the SSB-SC-AM Modulation and Demodulation is experimentally done and the output is verified.
-
-
 
 
 
